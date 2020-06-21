@@ -2044,3 +2044,282 @@ Did you mean?  image_path):
   
 app/views/articles/show.html.erb:6:in `block in _app_views_articles_show_html_erb__330978427585735076_70230701287840'
 app/views/articles/show.html.erb:5:in `_app_views_articles_show_html_erb__330978427585735076_70230701287840'
+Started GET "/" for 127.0.0.1 at 2020-06-21 12:42:37 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/nakitto/.rbenv/versions/2.6.5/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 814ms (Views: 788.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/articles/13" for 127.0.0.1 at 2020-06-21 12:42:44 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 13]]
+  ↳ app/views/articles/show.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 13]]
+  ↳ app/views/articles/show.html.erb:10
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (6.2ms)
+  Rendered articles/show.html.erb within layouts/application (125.3ms)
+Completed 200 OK in 220ms (Views: 154.3ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/articles/13" for 127.0.0.1 at 2020-06-21 12:45:31 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 13]]
+  ↳ app/views/articles/show.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 13]]
+  ↳ app/views/articles/show.html.erb:10
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (9.0ms)
+  Rendered articles/show.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 157ms (Views: 103.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2020-06-21 12:45:47 +0300
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/12" for 127.0.0.1 at 2020-06-21 12:45:49 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 12]]
+  ↳ app/views/articles/show.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 12]]
+  ↳ app/views/articles/show.html.erb:10
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (3.5ms)
+  Rendered articles/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 60ms (Views: 51.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2020-06-21 12:46:07 +0300
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 176ms (Views: 171.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2020-06-21 12:46:11 +0300
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (21.4ms)
+  Rendered articles/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 94ms (Views: 91.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2020-06-21 12:46:41 +0300
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q8goedDrSJmmBlbCUca8ZKWx8xWoxz2gwYCzzaaugmHHQo/Tk0AlMNkP6zFxSamqj+fwG6Zmw/BZLz+8xYXWTQ==", "article"=>{"title"=>"rails today", "body"=>"all the time", "tag_list"=>"ruby"}, "commit"=>"Create Article"}
+  [1m[36mTag Load (1.0ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "ruby"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:14
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:20
+  [1m[36mArticle Create (3.3ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "rails today"], ["body", "all the time"], ["created_at", "2020-06-21 09:46:41.074126"], ["updated_at", "2020-06-21 09:46:41.074126"]]
+  ↳ app/controllers/articles_controller.rb:20
+  [1m[36mTagging Create (1.4ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 3], ["article_id", 14], ["created_at", "2020-06-21 09:46:41.087940"], ["updated_at", "2020-06-21 09:46:41.087940"]]
+  ↳ app/controllers/articles_controller.rb:20
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:20
+Redirected to http://localhost:3000/articles/14
+Completed 302 Found in 110ms (ActiveRecord: 25.7ms)
+
+
+Started GET "/articles/14" for 127.0.0.1 at 2020-06-21 12:46:41 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 14]]
+  ↳ app/views/articles/show.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 14]]
+  ↳ app/views/articles/show.html.erb:10
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (10.4ms)
+  Rendered articles/show.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 114ms (Views: 103.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2020-06-21 12:46:57 +0300
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 38ms (Views: 36.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/articles/13" for 127.0.0.1 at 2020-06-21 12:47:00 +0300
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:9
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 13]]
+  ↳ app/views/articles/show.html.erb:5
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 13]]
+  ↳ app/views/articles/show.html.erb:10
+  Rendered collection of articles/_comment.html.erb [0 times] (0.1ms)
+  Rendered comments/_form.html.erb (8.5ms)
+  Rendered articles/show.html.erb within layouts/application (47.0ms)
+Completed 200 OK in 117ms (Views: 105.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tags/3" for 127.0.0.1 at 2020-06-21 12:47:51 +0300
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTag Load (0.9ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:3
+  Rendering tags/show.html.erb within layouts/application
+  [1m[36mArticle Load (1.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" INNER JOIN "taggings" ON "articles"."id" = "taggings"."article_id" WHERE "taggings"."tag_id" = ?[0m  [["tag_id", 3]]
+  ↳ app/views/tags/show.html.erb:4
+  Rendered tags/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 114ms (Views: 101.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 12:56:51 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 112ms (Views: 96.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 12:57:23 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 52ms (Views: 48.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 12:59:49 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (629.6ms)
+Completed 500 Internal Server Error in 632ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `article' for #<#<Class:0x00007f9d2c0638a0>:0x00007f9d22791578>
+Did you mean?  article_url):
+    3: <ul>
+    4:   <% @tags.each do |tag| %>
+    5:     <li>
+    6:       <%= article.tag %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tags/index.html.erb:6:in `block in _app_views_tags_index_html_erb__335586746424753663_70156432477960'
+app/views/tags/index.html.erb:4:in `_app_views_tags_index_html_erb__335586746424753663_70156432477960'
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 13:02:32 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 13:05:39 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"tags", :id=>nil}, missing required keys: [:id]):
+    4:   <% @tags.each do |tag| %>
+    5:     <li>
+    6:       <%= tag.name %>
+    7:       <%= link_to tag.name, tag_path(@article) %>
+    8:     </li>
+    9:   <% end %>
+   10: </ul>
+  
+app/views/tags/index.html.erb:7:in `block in _app_views_tags_index_html_erb__335586746424753663_70156514537100'
+app/views/tags/index.html.erb:4:in `_app_views_tags_index_html_erb__335586746424753663_70156514537100'
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 13:06:06 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"tags", :id=>nil}, missing required keys: [:id]):
+    3: <ul>
+    4:   <% @tags.each do |tag| %>
+    5:     <li>
+    6:       <%= link_to tag.name, tag_path(@article) %>
+    7:     </li>
+    8:   <% end %>
+    9: </ul>
+  
+app/views/tags/index.html.erb:6:in `block in _app_views_tags_index_html_erb__335586746424753663_70156512978840'
+app/views/tags/index.html.erb:4:in `_app_views_tags_index_html_erb__335586746424753663_70156512978840'
+Started GET "/tags" for 127.0.0.1 at 2020-06-21 13:06:52 +0300
+Processing by TagsController#index as HTML
+  Rendering tags/index.html.erb within layouts/application
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags"[0m
+  ↳ app/views/tags/index.html.erb:4
+  Rendered tags/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 34ms (Views: 32.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tags/1" for 127.0.0.1 at 2020-06-21 13:06:57 +0300
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTag Load (0.5ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:3
+  Rendering tags/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" INNER JOIN "taggings" ON "articles"."id" = "taggings"."article_id" WHERE "taggings"."tag_id" = ?[0m  [["tag_id", 1]]
+  ↳ app/views/tags/show.html.erb:4
+  Rendered tags/show.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 50ms (Views: 44.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/tags/3" for 127.0.0.1 at 2020-06-21 13:07:03 +0300
+Processing by TagsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tags_controller.rb:3
+  Rendering tags/show.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" INNER JOIN "taggings" ON "articles"."id" = "taggings"."article_id" WHERE "taggings"."tag_id" = ?[0m  [["tag_id", 3]]
+  ↳ app/views/tags/show.html.erb:4
+  Rendered tags/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 28ms (Views: 23.7ms | ActiveRecord: 0.5ms)
+
+
